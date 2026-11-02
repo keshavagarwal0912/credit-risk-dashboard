@@ -1,0 +1,19 @@
+table,issue,rows_affected,action
+customers,duplicate customer_id,0,none found
+loans,duplicate account_id,0,none found
+bureau,duplicate bureau_id,0,none found
+coll,duplicate collection_event_id,0,none found
+repay,duplicate account_id+payment_month,0,none found
+loans,loan with unknown customer_id,0,none found (referential integrity OK)
+customers,gender coded as M/F instead of Male/Female,600,"mapped M->Male, F->Female"
+customers,years_employed missing,500,imputed with median by employment_type; added years_employed_missing flag
+customers,num_dependents missing,500,imputed with median by marital_status; added num_dependents_missing flag
+customers,years_at_residence missing,500,imputed with median by housing_type; added years_at_residence_missing flag
+loans,interest_rate_pct missing,294,imputed with median by loan_type; added interest_rate_missing flag
+loans,origination_date earlier than customer.customer_since,7293,kept rows; flagged; customer_since treated as unreliable and not used as a model feature
+bureau,days_past_due missing,689,"left as NaN (not imputed to 0, which would look 'clean'); aggregated with max/mean ignoring NaN and counted per customer as bureau_dpd_missing"
+bureau,date_closed null,11243,expected: all nulls are Active lines (verified 0 Active rows with a close date)
+repay,history length,0,every account has exactly 12 months; no gaps
+collections,event_date earlier than the loan's origination_date,3875,"kept and flagged (coll_events_pre_origination); collections are NOT model features (they react to delinquency = target leakage), used for analytics/anomaly context only"
+bureau,customer has no bureau record (thin file),1008,"kept; bureau counts/amounts set to 0, bureau_thin_file=1 (1462 accounts)"
+output,"label spelling differs from DATA_DICTIONARY (Partner/DSA, SMS/Email Notice)",0,kept the values as they appear in the data

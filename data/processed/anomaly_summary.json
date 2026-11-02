@@ -1,0 +1,14 @@
+{
+  "own_dpd_jump": 127,
+  "own_payment_drop": 68,
+  "own_consec_missed": 33,
+  "peer_emi_burden": 383,
+  "peer_bureau_dpd": 240,
+  "peer_bureau_writeoffs": 102,
+  "peer_credit_hunger": 139,
+  "peer_utilization": 46,
+  "isolation_forest": 294,
+  "flagged_total": 1207,
+  "flagged_default_rate": 0.2278,
+  "not_flagged_default_rate": 0.155
+}

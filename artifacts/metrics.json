@@ -1,0 +1,60 @@
+{
+  "logistic_regression": {
+    "train": {
+      "AUC": 0.6985,
+      "Gini": 0.397,
+      "KS": 0.2998
+    },
+    "test": {
+      "AUC": 0.6611,
+      "Gini": 0.3221,
+      "KS": 0.2379
+    }
+  },
+  "lightgbm": {
+    "train": {
+      "AUC": 0.7105,
+      "Gini": 0.4209,
+      "KS": 0.3132
+    },
+    "test": {
+      "AUC": 0.6711,
+      "Gini": 0.3422,
+      "KS": 0.2457
+    },
+    "oof_5fold": {
+      "AUC": 0.6785,
+      "Gini": 0.357,
+      "KS": 0.2625
+    }
+  },
+  "test_rows": 4406,
+  "train_rows": 10279,
+  "test_default_rate": 0.1609,
+  "bands": [
+    {
+      "risk_band": "High",
+      "accounts": 1856,
+      "actual_default": 0.3319,
+      "avg_pd": 0.3278
+    },
+    {
+      "risk_band": "Low",
+      "accounts": 3782,
+      "actual_default": 0.0743,
+      "avg_pd": 0.0807
+    },
+    {
+      "risk_band": "Medium",
+      "accounts": 8939,
+      "actual_default": 0.1572,
+      "avg_pd": 0.1555
+    },
+    {
+      "risk_band": "Very High",
+      "accounts": 108,
+      "actual_default": 0.5741,
+      "avg_pd": 0.5468
+    }
+  ]
+}

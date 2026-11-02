@@ -1,0 +1,77 @@
+feature,coef
+cat__loan_type_Business Loan,-0.3649832249060742
+cat__loan_type_Credit Card,-0.3019134905614981
+num__loan_amount,0.2750236138781069
+num__bureau_active,-0.25764595757545383
+num__annual_income,-0.24592357517505728
+cat__marital_status_Widowed,-0.23782957544797406
+cat__employment_type_Unemployed,0.23219241874076782
+cat__loan_type_Personal Loan,-0.23191322517684623
+num__rep_late,0.21132212163537453
+cat__disbursal_channel_Mobile App,0.18322983952563002
+num__age,-0.17001109160088967
+num__years_employed,-0.16214467699934812
+cat__loan_purpose_Wedding,0.15998031714239058
+num__rep_max_dpd,0.14538346795441065
+cat__housing_type_Mortgaged,-0.14463888491640792
+num__interest_rate_pct,0.14454937833630982
+cat__loan_purpose_Home Improvement,0.1441480529623698
+cat__loan_purpose_Education,0.13478706473403534
+cat__housing_type_Owned,-0.13010534578432606
+num__bureau_avg_dpd,0.12716075074866856
+cat__loan_purpose_Other,0.12697990901487077
+cat__loan_purpose_Medical,0.1226629382774967
+num__bureau_lines_dpd30,0.12090311461316593
+cat__region_West,-0.11373422144307206
+cat__loan_type_Mortgage,-0.11339272398167237
+cat__loan_purpose_Vehicle Purchase,0.10771743583730709
+num__rep_missed,0.10366334426664463
+num__rep_pay_ratio,-0.10366334426663602
+cat__disbursal_channel_Partner/DSA,0.0938087577428959
+num__collateral_flag,-0.09179737596918933
+cat__education_level_Vocational,-0.0836525158839944
+cat__loan_purpose_Debt Consolidation,0.0802200868143218
+num__rep_ever_30dpd,-0.07992161786556522
+num__rep_ever_60dpd,-0.07421059842575786
+cat__region_East,-0.07350159195265431
+num__bureau_thin_file,0.0732803184828791
+num__tenure_months,-0.07183365769455877
+num__bureau_lines,0.07140001518962535
+cat__city_tier_Tier 3,0.06902398003194028
+cat__marital_status_Single,0.06857159171524844
+cat__city_tier_Tier 2,0.06791720840636209
+cat__disbursal_channel_Online,0.06596238939837336
+cat__housing_type_Rented,-0.0658613847405787
+num__bureau_active_outstanding,0.06302487097144115
+num__num_dependents,0.06083105617671675
+cat__education_level_High School,-0.06077912293470241
+cat__employment_type_Self-Employed,-0.0586770805274087
+cat__education_level_Doctorate,0.05864240135119558
+cat__employment_type_Salaried,-0.05633181779198611
+cat__employment_type_Contract,-0.05500853391632996
+num__bureau_any_written_off,-0.050551967094595536
+cat__region_South,0.04939100578368093
+num__years_at_residence,-0.04446442953549162
+cat__education_level_Master's,0.04184730961553243
+num__rep_avg_dpd,-0.03879291779578638
+num__missingindicator_bureau_max_dpd,-0.03758756400429948
+num__missingindicator_bureau_avg_dpd,-0.037587564004292834
+cat__region_North,-0.034790444930407075
+num__bureau_nonbank_share,0.034716109369980014
+num__loan_to_income,0.03348595452310223
+num__bureau_written_off,0.028070772190267174
+num__rep_pay_ratio_last3,-0.025163624225990854
+num__rep_dpd_trend,0.024599801399381956
+num__rep_max_consec_missed,0.024356750368857993
+num__customer_loan_count,0.02178270454185608
+num__bureau_dpd_missing,0.019176798269522278
+num__years_employed_missing,0.018210825927336617
+num__bureau_new_lines_12m,-0.01700504604109588
+num__bureau_max_dpd,0.016799497976692442
+num__interest_rate_missing,0.01617901380598024
+num__bureau_utilization,-0.009656627446943568
+num__bureau_oldest_line_yrs,-0.00909172015414672
+num__emi_to_income,-0.005514719802309767
+cat__marital_status_Married,0.003560985369154107
+cat__loan_purpose_Travel,0.0007872831072211915
+num__rep_dpd_last3,-0.00031281081416473916
