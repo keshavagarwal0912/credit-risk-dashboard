@@ -95,8 +95,9 @@ with tab_port:
     k = st.columns(6)
     k[0].metric("Accounts", f"{s['accounts']:,}")
     k[1].metric("Exposure", money(s["exposure"]))
-    k[2].metric("Default rate", f"{s['default_rate']:.1%}", f"{s['default_rate'] - df.target_default.mean():+.1%} vs portfolio",
-                delta_color="inverse")
+    # Delta only makes sense once a filter narrows the portfolio.
+    k[2].metric("Default rate", f"{s['default_rate']:.1%}",
+                f"{s['default_rate'] - df.target_default.mean():+.1%} vs portfolio" if filters else None, delta_color="inverse")
     k[3].metric("Defaulted exposure", money(s["defaulted_exposure"]))
     k[4].metric("Avg model PD", f"{s['avg_pd']:.1%}")
     k[5].metric("Anomaly flags", f"{s['anomalies']:,}")
@@ -296,7 +297,7 @@ with tab_ask:
                 if res["unverified"]:
                     st.warning(f"⚠️ UNVERIFIED figure(s) not found in any tool result: {res['unverified']}. Do not reuse without checking.")
                 elif res["trace"]:
-                    st.success("✅ Every figure in this answer matches a tool result.", icon="✅")
+                    st.success("Every figure in this answer matches a tool result.", icon="✅")
                 if res["trace"]:
                     with st.expander(f"Where the numbers came from ({len(res['trace'])} tool call(s))"):
                         for t in res["trace"]:
@@ -407,10 +408,11 @@ with tab_model:
     st.subheader("Default model")
     mt = pd.DataFrame([{"model": "Logistic regression (baseline)", **metrics["logistic_regression"]["test"]},
                        {"model": "LightGBM (chosen)", **metrics["lightgbm"]["test"]},
-                       {"model": "LightGBM, 5-fold out-of-fold (all accounts)", **metrics["lightgbm"]["oof_5fold"]}])
-    c1, c2 = st.columns([2, 3])
+                       {"model": "LightGBM, 5-fold OOF", **metrics["lightgbm"]["oof_5fold"]}])[["model", "AUC", "KS", "Gini"]]
+    c1, c2 = st.columns([5, 6])
     with c1:
         st.dataframe(mt, hide_index=True, width="stretch")
+        st.caption("OOF = out-of-fold: every account scored by a model that never saw it in training.")
         st.caption(f"Hold-out test set: {metrics['test_rows']:,} accounts (30%, stratified), default rate "
                    f"{metrics['test_default_rate']:.1%}. Train AUC LightGBM {metrics['lightgbm']['train']['AUC']} → small overfit gap.")
         bands = pd.DataFrame(metrics["bands"])
